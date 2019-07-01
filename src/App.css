@@ -1,5 +1,20 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html,
+body,
+#root,
+.main-content {
+  height: 100%;
+}
+
 .App {
+  min-height: 100%;
+  height: fit-content;
   text-align: center;
+  background-color: grey;
 }
 
 .App-logo {
@@ -21,6 +36,46 @@
 
 .App-link {
   color: #61dafb;
+}
+
+button {
+  background-color: white;
+  border: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow:  2px 3px 3px #111;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 180px;
+  padding: 1.5rem;
+  background-color: #111;
+}
+
+.navbar a {
+  padding: .25rem;
+  margin-bottom: .2rem;
+  color: whitesmoke;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  background-color: rgb(132, 132, 132);
+}
+
+.main-content {
+  margin-left: 180px;
+  padding: 3rem;
 }
 
 @keyframes App-logo-spin {
