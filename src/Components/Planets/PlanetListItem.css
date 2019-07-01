@@ -1,0 +1,7 @@
+.planet-list-item {
+    cursor: pointer;
+    padding: 3rem;
+    background-color: #111;
+    color: whitesmoke;
+    margin-bottom: 1.5rem;
+}
