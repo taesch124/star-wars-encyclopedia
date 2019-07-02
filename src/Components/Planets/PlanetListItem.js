@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlanetListItem.css';
+import './PlanetListItem.scss';
 
 function PlanetListItem(props) {
     let planet = props.planet;

@@ -1,7 +1,9 @@
+@import './../../Styles/Variables.scss';
+
 .planet-list-item {
     cursor: pointer;
     padding: 3rem;
-    background-color: #111;
+    background-color: $primary-color;
     color: whitesmoke;
     margin-bottom: 1.5rem;
 }
