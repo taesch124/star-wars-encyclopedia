@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 //Mpdels
 import PlanetPanel from './PlanetPanel';
 import PlanetListItem from './PlanetListItem';
 import SimpleList from './../Lists/SimpleList';
-import { type } from 'os';
 
 //CSS
 
@@ -27,7 +25,6 @@ class PlanetContainer extends Component {
     }
 
     componentDidMount() {
-        
         this.getPlanetList('https://swapi.co/api/planets/');
         document.addEventListener('scroll', this.trackScrolling);
     }
@@ -44,7 +41,8 @@ class PlanetContainer extends Component {
                     ?
                     <PlanetPanel 
                         planet={this.state.selectedPlanet} 
-                        deselectPlanet={this.deselectPlanet} 
+                        deselectPlanet={this.deselectPlanet}
+                        toggleDetails={this.toggleDetails}
                     />
                     :
                     <SimpleList
@@ -97,8 +95,6 @@ class PlanetContainer extends Component {
     }
 
     deselectPlanet = () => {
-        
-        
         this.setState({
             selectedPlanet: null,
         }, () => {
@@ -124,7 +120,19 @@ class PlanetContainer extends Component {
 
     isBottom(el) {
         return el.getBoundingClientRect().bottom <= window.innerHeight;
-      }
+    }
+
+    toggleDetails = (e) => {
+        console.log(document.getElementById('selected-planet'));
+        let panel = document.getElementById('selected-planet');
+
+        if(panel.classList.contains('flip')) {
+            panel.classList.remove('flip');
+        } else {
+            panel.classList.add('flip');
+        }
+        
+    }
 }
 
 export default PlanetContainer;

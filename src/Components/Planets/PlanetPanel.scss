@@ -13,8 +13,12 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
     &:hover {
-        transform: rotateY(180deg);
+        // transform: rotateY(180deg);
     }
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
 
 .front,
@@ -28,10 +32,15 @@
 .front {
     @extend .flex-column-nowrap;
     justify-content: space-around;
+    
 }
 
 .back {
     transform: rotateY(180deg);
+
+    h5 {
+        text-align: center;
+    }
 }
 
 
@@ -41,13 +50,19 @@
     height: 100%;
 }
 
-.front-menu,
+.menu,
 .front-content {
     width: 100%;
 }
 
-.front-menu {
+.menu {
+    @extend .flex-row-nowrap;
     flex: 1 1 auto;
+    justify-content: space-between;
+
+    button {
+        height: fit-content;
+    }
 }
 
 .front-content {
