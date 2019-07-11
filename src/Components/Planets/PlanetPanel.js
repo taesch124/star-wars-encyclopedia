@@ -5,7 +5,7 @@ import './PlanetPanel.scss'
 function PlanetPanel (props) {
     let planetData = props.planet;
     return (
-        <div className='planet-panel' id='selected-planet'>
+        <div className='panel planet-panel' id='selected-planet'>
             
             <div className='front'>
                 <div className="menu">
@@ -21,15 +21,17 @@ function PlanetPanel (props) {
                     <button onClick={props.deselectPlanet}>Back</button>
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
-                <h5>{planetData.name}</h5>
-                <p>Terrain: {planetData.terrain}</p>
-                <p>Climate: {planetData.climate}</p>
-                <p>Surface Water: {planetData.surface_water}%</p>
-                <p>Diameter: {planetData.diameter}km</p>
-                <p>Day Length:{planetData.rotation_period} hours</p>
-                <p>Year Length: {planetData.orbital_period} days</p>
-                <p>Population: {planetData.population}</p>
-                <p>Gravity: {planetData.gravity} G</p>
+                <div className="back-content">
+                    <h5>{planetData.name}</h5>
+                    <p>Terrain: {planetData.terrain}</p>
+                    <p>Climate: {planetData.climate}</p>
+                    <p>Surface Water: {planetData.surface_water}%</p>
+                    <p>Diameter: {planetData.diameter}km</p>
+                    <p>Day Length:{planetData.rotation_period} hours</p>
+                    <p>Year Length: {planetData.orbital_period} days</p>
+                    <p>Population: {planetData.population}</p>
+                    <p>Gravity: {planetData.gravity} G</p>
+                </div>
             </div>
         </div>
     )

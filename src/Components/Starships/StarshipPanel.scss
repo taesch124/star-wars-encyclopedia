@@ -2,9 +2,7 @@
 @import './../../Styles/Flexbox.scss';
 @import './../../Styles/Fonts.scss';
 
-$planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'cityscape' 'ocean';
-
-.planet-panel {
+.panel {
     height: 80vh;
     background-color: $primary-color;
     color: $text-primary;
@@ -16,14 +14,6 @@ $planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'ci
     // &:hover {
     //     transform: rotateY(180deg);
     // }
-}
-
-@each $planet-terrain in $planet-terrain-list {
-    .#{$planet-terrain} {
-        background-image: url('/assets/images/terrains/#{$planet-terrain}.jpg');
-        background-repeat: no-repeat;
-        background-size: cover; 
-    }
 }
 
 .flip {

@@ -1,0 +1,37 @@
+@import './../../Styles/Variables.scss';
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 180px;
+    padding: 1.5rem;
+    background-color: #111;
+
+    h4 {
+        font-size: 2rem;
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 3rem;
+    }
+
+    a {
+        padding: .25rem;
+        margin-bottom: .2rem;
+        color: whitesmoke;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $secondary-color-dark;
+            color: $text-secondary;
+        }
+    }
+}  
+
+.icon {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin-right: 1rem;
+}
