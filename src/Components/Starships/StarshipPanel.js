@@ -3,7 +3,7 @@ import React from 'react';
 import './StarshipPanel.scss'
 
 function StarshipPanel (props) {
-    let starshipData = props.selecedItem;
+    let starshipData = props.item;
     console.log(starshipData);
     return (
         <div className='panel starship-panel' id='selected-item'>

@@ -3,7 +3,7 @@ import React from 'react';
 import './PlanetPanel.scss'
 
 function PlanetPanel (props) {
-    let planetData = props.planet;
+    let planetData = props.item;
     return (
         <div className='panel planet-panel' id='selected-planet'>
             

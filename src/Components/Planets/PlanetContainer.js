@@ -4,7 +4,7 @@ import axios from 'axios';
 //Mpdels
 import PlanetPanel from './PlanetPanel';
 import PlanetListItem from './PlanetListItem';
-import SimpleList from './../Lists/SimpleList';
+import InfiniteList from './../Lists/InfiniteList';
 
 //CSS
 
@@ -15,70 +15,36 @@ class PlanetContainer extends Component {
         super(props);
 
         this.state = {
-            planetList: [],
-            endOfList: false,
-            nextPlanetsUrl: '',
             selectedPlanetUrl: '',
             selectedPlanet: null,
             lastScrollPosition: -1
         }
     }
 
-    componentDidMount() {
-        this.getPlanetList('https://swapi.co/api/planets/');
-        document.addEventListener('scroll', this.trackScrolling);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('scroll', this.trackScrolling)
-    }
-
     render() {
+        const planetListItem = <PlanetListItem />
         return (
             <div className="planet-container">
                 {
                     this.state.selectedPlanet 
                     ?
                     <PlanetPanel 
-                        planet={this.state.selectedPlanet} 
+                        item={this.state.selectedPlanet} 
                         deselectPlanet={this.deselectPlanet}
                         toggleDetails={this.toggleDetails}
                     />
                     :
-                    <SimpleList
-                        trackScrolling={null}
-                    >
-                        {this.state.planetList.length > 0 ?
-                        this.state.planetList.map(planet => {
-                            return (
-                                <PlanetListItem 
-                                    key={planet.url} 
-                                    selectPlanet={this.selectPlanet} 
-                                    planet={planet} />
-                            )
-                        }) :
-                        <p>No planet data yet</p>}
-                    </SimpleList>
+                    <InfiniteList
+                        startingUrl={'https://swapi.co/api/planets'}
+                        selectedItem={this.state.selectedPlanet}
+                        listItemComponent={planetListItem}
+                        selectItem={this.selectPlanet}
+                        listLoaded={this.setScrollPosition}
+                    />
                 }
                 
             </div>
         )
-    }
-
-    getPlanetList = (url) => {
-        axios.get(url)
-        .then(response => {
-            let newList = [...this.state.planetList, ...response.data.results];
-            console.log(newList);
-            this.setState({
-                planetList: newList,
-                nextPlanetsUrl: response.data.next,
-                endOfList: false
-            });
-        })
-        .catch(error => {
-            console.error(error);
-        });
     }
 
     selectPlanet = (planetUrl) => {
@@ -94,36 +60,20 @@ class PlanetContainer extends Component {
         });
     }
 
-    deselectPlanet = () => {
-        this.setState({
-            selectedPlanet: null,
-        }, () => {
-            if(this.state.lastScrollPosition >= 0) {
-                window.scrollTo(0, this.state.lastScrollPosition);
-            }
-        });
-    }
-
-    trackScrolling = (e) => {
-        
-        if(this.state.selectedPlanet) return;
-
-        let wrappedElement = document.getElementById('list');
-        if(this.isBottom(wrappedElement) && !this.state.endOfList) {
-            this.setState({
-                endOfList: true
-            }, () => {
-                if(this.state.nextPlanetsUrl) this.getPlanetList(this.state.nextPlanetsUrl);
-            });
+    setScrollPosition = () => {
+        if(this.state.lastScrollPosition >= 0) {
+            window.scrollTo(0, this.state.lastScrollPosition);
         }
     }
 
-    isBottom(el) {
-        return el.getBoundingClientRect().bottom <= window.innerHeight;
+    deselectPlanet = () => {
+        console.log(this.state.lastScrollPosition)
+        this.setState({
+            selectedPlanet: null,
+        });
     }
 
     toggleDetails = (e) => {
-        console.log(document.getElementById('selected-planet'));
         let panel = document.getElementById('selected-planet');
 
         if(panel.classList.contains('flip')) {
