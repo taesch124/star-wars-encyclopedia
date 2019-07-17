@@ -5,11 +5,11 @@ import './PlanetPanel.scss'
 function PlanetPanel (props) {
     let planetData = props.item;
     return (
-        <div className='panel planet-panel' id='selected-planet'>
+        <div className='panel planet-panel' id='selected-item'>
             
             <div className='front'>
                 <div className="menu">
-                    <button onClick={props.deselectPlanet}>Back</button>
+                    <button onClick={props.deselectItem}>Back</button>
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
                 <div className="front-content">
@@ -18,7 +18,7 @@ function PlanetPanel (props) {
             </div>
             <div className={`back ${planetData.terrain.split(', ').join(' ')}`}>
                 <div className="menu">
-                    <button onClick={props.deselectPlanet}>Back</button>
+                    <button onClick={props.deselectItem}>Back</button>
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
                 <div className="back-content">

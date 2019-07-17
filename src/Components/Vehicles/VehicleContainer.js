@@ -6,8 +6,6 @@ import VehiclePanel from './VehiclePanel';
 import SimpleListItem from './../Lists/SimpleListItem';
 
 function VehicleContainer(props) {
-
-
     return (
         <div className="vehicle-container">
             <MasterDetailContainer 

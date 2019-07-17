@@ -18,11 +18,11 @@ class MasterDetailContainer extends Component {
     }
 
     render() {
-        const PanelTag = this.props.panelComponent;
+        const PanelComponent = this.props.panelComponent;
         return (
             <div className="master-detail-container">
                 {this.state.selectedItem ?
-                <PanelTag 
+                <PanelComponent 
                     item={this.state.selectedItem}
                     toggleDetails={this.toggleDetails}
                     deselectItem={this.deselectItem}
