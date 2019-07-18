@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import './App.scss';
 
 import NavBar from './Components/NavBar/NavBar';
@@ -16,11 +16,7 @@ function App() {
       <div className="main-content">
         <Route exact path="/planets" render={props => <PlanetContainer {...props} />} />
         <Route exact path="/starships" render={props => <StarshipContainer {...props} />} />
-        <Route  exact path="/vehicles" 
-                render={props => <VehicleContainer 
-                                    {...props} />
-                        } 
-        />
+        <Route exact path="/vehicles" render={props => <VehicleContainer {...props} /> } />
       </div>
       
     </div>
