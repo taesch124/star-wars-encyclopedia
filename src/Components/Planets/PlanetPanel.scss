@@ -4,8 +4,8 @@
 
 $planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'cityscape' 'ocean';
 
-.planet-panel {
-    height: 80vh;
+.panel {
+    height: 100%;
     background-color: $primary-color;
     color: $text-primary;
     text-align: left;

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-//Mpdels
+//Models
 import InfiniteList from './../Lists/InfiniteList';
 
 //CSS
+import './MasterDetailContainer.scss';
 
 class MasterDetailContainer extends Component {
     constructor(props) {
@@ -21,13 +22,7 @@ class MasterDetailContainer extends Component {
         const PanelComponent = this.props.panelComponent;
         return (
             <div className="master-detail-container">
-                {this.state.selectedItem ?
-                <PanelComponent 
-                    item={this.state.selectedItem}
-                    toggleDetails={this.toggleDetails}
-                    deselectItem={this.deselectItem}
-                />
-                :
+                <div id="master-container">
                 <InfiniteList
                     startingUrl={this.props.startingUrl}
                     selectedItem={this.state.selectedItem}
@@ -35,7 +30,19 @@ class MasterDetailContainer extends Component {
                     selectItem={this.selectItem}
                     listLoaded={this.setScrollPosition}
                 />
-                }
+                </div>
+                <div id="detail-container">
+                    {this.state.selectedItem ?
+                    <PanelComponent 
+                        item={this.state.selectedItem}
+                        toggleDetails={this.toggleDetails}
+                        deselectItem={this.deselectItem}
+                    />
+                    :
+                    <p>Nothing selected</p>
+                    }
+                </div>
+                
             </div>
         )
     }

@@ -1,13 +1,16 @@
 @import './../../Styles/Variables.scss';
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 180px;
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: #111;
+    transition: width 1s;
+    border-right: 1px solid white;
+
+    #navbar-open {
+        transition: display 1s;
+    }
 
     h4 {
         font-size: 2rem;
@@ -27,11 +30,16 @@
             color: $text-secondary;
         }
     }
-}  
+}
+
+
 
 .icon {
     background-color: white;
     width: 30px;
     height: 30px;
-    margin-right: 1rem;
+}
+
+.navbar-hidden {
+    width: 90px;
 }

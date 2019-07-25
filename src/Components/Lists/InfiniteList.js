@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './InfiniteList.scss';
+
 class InfiniteList extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +16,13 @@ class InfiniteList extends Component {
 
     componentDidMount() {
         this.getNextItems(this.props.startingUrl);
-        document.addEventListener('scroll', this.trackScrolling);
+        let wrapper = document.getElementById('master-container');
+        wrapper.addEventListener('scroll', this.trackScrolling);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('scroll', this.trackScrolling)
+        let wrapper = document.getElementById('master-container');
+        wrapper.removeEventListener('scroll', this.trackScrolling)
     }
     
     render() {
@@ -61,8 +65,6 @@ class InfiniteList extends Component {
     }
 
     trackScrolling = (e) => {
-        if(this.props.selectedItem) return;
-
         let wrappedElement = document.getElementById('master-list');
         if(this.isBottom(wrappedElement) && !this.state.endOfList) {
             this.setState({
