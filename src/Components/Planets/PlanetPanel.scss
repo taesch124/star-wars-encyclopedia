@@ -2,7 +2,7 @@
 @import './../../Styles/Flexbox.scss';
 @import './../../Styles/Fonts.scss';
 
-$planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'cityscape' 'ocean';
+$planet-terrain-list: 'mountains' 'asteroid' 'savanna' 'islands' 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'cityscape' 'ocean' 'rocky'  'forests' 'volcanoes' 'desert';
 
 .panel {
     height: 100%;
@@ -47,7 +47,6 @@ $planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'ci
 .back {
     transform: rotateY(180deg);
 
-
     h5 {
         text-align: center;
     }
@@ -87,7 +86,10 @@ $planet-terrain-list: 'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'ci
 }
 
 .back-content {
+    @extend .flex-column-nowrap;
+    justify-content: center;
     margin-top: 2rem;
     padding: 1rem;
     background-color: rgba(56, 56, 56, 0.657);
+    flex: 0 0 auto;
 }

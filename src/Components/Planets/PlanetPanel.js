@@ -1,13 +1,46 @@
 import React from 'react';
 
-import './PlanetPanel.scss'
+import './PlanetPanel.scss';
+
+//'jungle' 'grasslands' 'tundra' 'swamp' 'gas' 'forests' 'cityscape' 'ocean' 'mountains'
+
+const terrainList = {
+    'mountain': 'mountains',
+    'mountains': 'mountains',
+    'grasslands': 'grasslands',
+    'grassy': 'grasslands',
+    'grass': 'grasslands',
+    'plains': 'grasslands',
+    'verdant': 'grasslands',
+    'tundra': 'tundra',
+    'glaciers': 'tundra',
+    'swamp': 'swamp',
+    'swamps': 'swamp',
+    'gas': 'gas',
+    'rainforests': 'forests',
+    'forests': 'forests',
+    'jungle': 'jungle',
+    'jungles': 'jungle',
+    'cityscape': 'cityscape',
+    'urban': 'cityscape',
+    'ocean': 'ocean',
+    'asteroid': 'asteroid',
+    'savanna': 'savanna',
+    'savannas': 'savanna',
+    'islands': 'islands',
+    'volcanoes': 'volcanoes',
+    'ash': 'volcanoes',
+    'desert': 'desert',
+    'deserts': 'desert',
+    'rocky': 'rocky'
+};
 
 function PlanetPanel (props) {
     let planetData = props.item;
     return (
         <div className='panel planet-panel' id='selected-item'>
             
-            <div className='front'>
+            <div className={`front ${getPrimaryTerrain(planetData.terrain)}`}>
                 <div className="menu">
                     <button onClick={props.deselectItem}>Back</button>
                     <button onClick={props.toggleDetails}>Flip</button>
@@ -16,7 +49,7 @@ function PlanetPanel (props) {
                     <h3 className="planet-name-front">{planetData.name}</h3>
                 </div>
             </div>
-            <div className={`back ${planetData.terrain.split(', ').join(' ')}`}>
+            <div className='back'>
                 <div className="menu">
                     <button onClick={props.deselectItem}>Back</button>
                     <button onClick={props.toggleDetails}>Flip</button>
@@ -35,6 +68,20 @@ function PlanetPanel (props) {
             </div>
         </div>
     )
+}
+
+function getPrimaryTerrain(terrains) {
+    let classString = '';
+
+    terrains.split(/, | /).some(terrain => {
+        console.log(terrain, terrainList[terrain]);
+        if(terrainList[terrain]) {
+            classString = terrainList[terrain];
+            return true;
+        }
+    });
+
+    return classString
 }
 
 export default PlanetPanel;

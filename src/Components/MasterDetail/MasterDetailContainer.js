@@ -3,6 +3,7 @@ import axios from 'axios';
 
 //Models
 import InfiniteList from './../Lists/InfiniteList';
+import Message from './../Message/Message';
 
 //CSS
 import './MasterDetailContainer.scss';
@@ -39,7 +40,9 @@ class MasterDetailContainer extends Component {
                         deselectItem={this.deselectItem}
                     />
                     :
-                    <p>Nothing selected</p>
+                    <Message
+                        message="Nothing selected"
+                    />
                     }
                 </div>
                 
@@ -48,8 +51,11 @@ class MasterDetailContainer extends Component {
     }
 
     selectItem = (itemUrl) => {
+        let currentPanel = document.getElementById('selected-item');
         axios.get(itemUrl)
         .then(response => {
+            
+            if(currentPanel && currentPanel.classList.contains('flip')) this.toggleDetails();
             this.setState({
                 selectedItem: response.data,
                 lastScrollPosition: window.scrollY

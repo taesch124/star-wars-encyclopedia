@@ -2,7 +2,7 @@
 
 .navbar {
     height: 100%;
-    width: 180px;
+    width: 240px;
     padding: 1rem;
     background-color: #111;
     transition: width 1s;
@@ -12,13 +12,9 @@
         transition: display 1s;
     }
 
-    h4 {
-        font-size: 2rem;
-        font-family: 'StarJedi', 'Times New Roman', Times, serif;
-        line-height: 3rem;
-    }
-
     a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 2rem;
         padding: .25rem;
         margin-bottom: .2rem;
         color: whitesmoke;
