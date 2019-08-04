@@ -40,7 +40,9 @@ class InfiniteList extends Component {
                             />
                         )
                     }) :
-                    <p>No planet data yet</p>}
+                    <div className="list-loading">
+                        <img className="loading-icon" src={process.env.PUBLIC_URL + '/assets/images/loaders/circle-loader.gif'} alt="Loading icon" />
+                    </div>}
                 </ul>
             </div>
         )

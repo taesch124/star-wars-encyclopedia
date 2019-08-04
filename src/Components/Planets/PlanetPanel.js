@@ -79,9 +79,10 @@ function getPrimaryTerrain(terrains) {
             classString = terrainList[terrain];
             return true;
         }
+        return false;
     });
 
-    return classString
+    return classString;
 }
 
 export default PlanetPanel;

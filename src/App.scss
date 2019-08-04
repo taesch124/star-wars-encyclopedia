@@ -47,11 +47,13 @@ button:hover {
 }
 
 .main-content {
+  background: black;
   width: 100%;
+  height: 100vh;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 ::-webkit-scrollbar {

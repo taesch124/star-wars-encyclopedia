@@ -3,9 +3,11 @@ import {Route} from 'react-router-dom';
 import './App.scss';
 
 import NavBar from './Components/NavBar/NavBar';
+import Welcome from './Components/Welcome/Welcome';
 import PlanetContainer from './Components/Planets/PlanetContainer';
 import StarshipContainer from './Components/Starships/StarshipContainer';
 import VehicleContainer from './Components/Vehicles/VehicleContainer';
+import SpeciesContainer from './Components/Species/SpeciesContainer';
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <NavBar />
       </div>
       <div className="main-content">
+        <Route exact path ="/" render={props => <Welcome {...props} />} />
         <Route exact path="/planets" render={props => <PlanetContainer {...props} />} />
         <Route exact path="/starships" render={props => <StarshipContainer {...props} />} />
         <Route exact path="/vehicles" render={props => <VehicleContainer {...props} /> } />
+        <Route exact path="/species" render={props => <SpeciesContainer {...props} />} />
       </div>
       
     </div>

@@ -1,0 +1,16 @@
+@import './../../Styles/Variables.scss';
+
+.welcome-message {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 100%;
+
+    h3 {
+        color: $text-primary;
+    }
+
+    p {
+        color: $text-primary;
+    }
+}

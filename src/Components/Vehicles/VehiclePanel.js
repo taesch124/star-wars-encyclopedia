@@ -1,9 +1,30 @@
 import React from 'react';
 
+const companiesList = {
+    'Kuat': 'kuat',
+    'Sienar': 'sienar',
+    'Corellian': 'corellia',
+    'Corellia': 'corellia',
+    'Imperial': 'imperial',
+    'Koensayr': 'koensayr',
+    'Incom': 'incom',
+    'Calamari': 'mon-calamari',
+    'Slayne': 'slayn-korpil',
+    'Korpil': 'slayn-korpil',
+    'Theed': 'theed',
+    'Rendili': 'rendili',
+    'Gallofree': 'gallofree',
+    'Hoersch-Kessel': 'hoersch-kessel',
+    'Kessel': 'hoersch-kessel',
+    'Rothana': 'rothana',
+    'Huppla': 'huppla-pasa',
+    'SoroSuub': 'soro-suub',
+    'Bespin': 'bespin'
+};
 
 function VehiclePanel(props) {
     let vehicle = props.item;
-
+    let company = getCompany(vehicle.manufacturer);
     return (
         <div className='panel vehicle-panel' id='selected-item'>
             
@@ -13,6 +34,14 @@ function VehiclePanel(props) {
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
                 <div className="front-content">
+                    {company !== '' ?
+                        <img 
+                            className="company-logo" 
+                            src={process.env.PUBLIC_URL + '/assets/images/company-logos/' + company + '.png'} 
+                            alt="Company logo" 
+                        /> :
+                        null
+                    }
                     <h3 className="planet-name-front">{vehicle.name}</h3>
                 </div>
             </div>
@@ -35,6 +64,21 @@ function VehiclePanel(props) {
             </div>
         </div>
     )
+}
+
+function getCompany(companies) {
+    let classString = '';
+
+    companies.split(/, | /).some(company => {
+        console.log(company, companiesList[company]);
+        if(companiesList[company]) {
+            classString = companiesList[company];
+            return true;
+        }
+        return false;
+    });
+
+    return classString;
 }
 
 export default VehiclePanel;
