@@ -42,7 +42,7 @@ function VehiclePanel(props) {
                         /> :
                         null
                     }
-                    <h3 className="planet-name-front">{vehicle.name}</h3>
+                    <h2 className="planet-name-front">{vehicle.name}</h2>
                 </div>
             </div>
             <div className={`back`}>
@@ -70,7 +70,6 @@ function getCompany(companies) {
     let classString = '';
 
     companies.split(/, | /).some(company => {
-        console.log(company, companiesList[company]);
         if(companiesList[company]) {
             classString = companiesList[company];
             return true;

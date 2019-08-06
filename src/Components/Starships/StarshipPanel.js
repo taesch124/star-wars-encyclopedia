@@ -24,7 +24,6 @@ const companiesList = {
 function StarshipPanel (props) {
     let starshipData = props.item;
     let company = getCompany(starshipData.manufacturer);
-    console.log(starshipData);
     return (
         <div className='panel starship-panel' id='selected-item'>
             
@@ -42,7 +41,7 @@ function StarshipPanel (props) {
                         /> :
                         null
                     }
-                    <h3 className="starship-name-front">{starshipData.name}</h3>
+                    <h2 className="starship-name-front">{starshipData.name}</h2>
                 </div>
             </div>
             <div className={`back`}>
@@ -70,7 +69,6 @@ function getCompany(companies) {
     let classString = '';
 
     companies.split(/, | /).some(company => {
-        console.log(company, companiesList[company]);
         if(companiesList[company]) {
             classString = companiesList[company];
             return true;

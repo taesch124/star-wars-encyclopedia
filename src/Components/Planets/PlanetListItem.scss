@@ -7,3 +7,8 @@
     color: whitesmoke;
     width: 100%;
 }
+
+.selected {
+    background-color: $selected-color;
+    color: $text-secondary;
+}

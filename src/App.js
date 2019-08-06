@@ -8,6 +8,7 @@ import PlanetContainer from './Components/Planets/PlanetContainer';
 import StarshipContainer from './Components/Starships/StarshipContainer';
 import VehicleContainer from './Components/Vehicles/VehicleContainer';
 import SpeciesContainer from './Components/Species/SpeciesContainer';
+import PeopleContainer from './Components/People/PeopleContainer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/starships" render={props => <StarshipContainer {...props} />} />
         <Route exact path="/vehicles" render={props => <VehicleContainer {...props} /> } />
         <Route exact path="/species" render={props => <SpeciesContainer {...props} />} />
+        <Route exact path="/people" render={props => <PeopleContainer {...props} /> } />
       </div>
       
     </div>

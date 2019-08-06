@@ -2,8 +2,35 @@
 
 $large-font: 5rem;
 
+h2 {
+    font-family: $display-font;
+    font-size:3rem;
+    line-height: 4rem;
+    letter-spacing: .25rem;
+}
+
+h3 {
+    font-family: $display-font;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: .1rem;
+}
+
 //Reserved for navbar links
 h4 {
-    font-size: 2.5rem;
-    line-height: 4rem;
+    font-family: $display-font;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: .15rem;
+}
+
+h5 {
+    font-family: $header-font;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+}
+
+p {
+    font-family: $primary-font;
+    letter-spacing: .1rem;
 }

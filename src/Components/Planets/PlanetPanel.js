@@ -46,7 +46,7 @@ function PlanetPanel (props) {
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
                 <div className="front-content">
-                    <h3 className="planet-name-front">{planetData.name}</h3>
+                    <h2 className="planet-name-front">{planetData.name}</h2>
                 </div>
             </div>
             <div className='back'>

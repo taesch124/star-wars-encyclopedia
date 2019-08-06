@@ -50,8 +50,10 @@ class MasterDetailContainer extends Component {
         )
     }
 
-    selectItem = (itemUrl) => {
+    selectItem = (e, itemUrl) => {
         let currentPanel = document.getElementById('selected-item');
+        this.clearSelected();
+        e.currentTarget.classList.add('selected');
         axios.get(itemUrl)
         .then(response => {
             
@@ -88,6 +90,16 @@ class MasterDetailContainer extends Component {
             panel.classList.add('flip');
         }
         
+    }
+
+    clearSelected = () => {
+        let listItems = document.getElementsByClassName('list-item');
+
+        for(let i = 0; i < listItems.length; i++) {
+            let item = listItems[i];
+            if(item.classList.contains('selected')) item.classList.remove('selected');
+        }
+
     }
 }
 
