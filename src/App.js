@@ -10,11 +10,11 @@ import VehicleContainer from './Components/Vehicles/VehicleContainer';
 import SpeciesContainer from './Components/Species/SpeciesContainer';
 import PeopleContainer from './Components/People/PeopleContainer';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <div className="navbar-content">
-        <NavBar />
+        <NavBar {...props} />
       </div>
       <div className="main-content">
         <Route exact path ="/" render={props => <Welcome {...props} />} />

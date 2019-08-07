@@ -41,7 +41,7 @@ class MasterDetailContainer extends Component {
                     />
                     :
                     <Message
-                        message="Nothing selected"
+                        message="This isn't the droid you're looking for."
                     />
                     }
                 </div>

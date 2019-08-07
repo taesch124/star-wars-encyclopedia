@@ -64,6 +64,11 @@
     height: 45px;
 }
 
+.link-selected {
+    background-color: $secondary-color-dark;
+    color: $text-secondary;
+}
+
 .navbar-button {
     cursor: pointer;
     width: 30px;
@@ -77,15 +82,15 @@
 
 /* Link hover background colors */
 
-#planet-link:hover {
+#planets-link:hover {
     background-color: rgb(156, 241, 76);
 }
 
-#starship-link:hover {
+#starships-link:hover {
     background-color: lightgrey;
 }
 
-#vehicle-link:hover {
+#vehicles-link:hover {
     background-color: rgb(143, 210, 233);
 }
 
