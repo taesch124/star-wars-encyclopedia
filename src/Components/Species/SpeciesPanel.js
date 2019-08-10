@@ -13,6 +13,10 @@ function SpeciesPanel (props) {
                     <button onClick={props.toggleDetails}>Flip</button>
                 </div>
                 <div className="front-content">
+                    <img 
+                        src={process.env.PUBLIC_URL + '/assets/images/species/' + formatSpeciesName(speciesData.name) + '.jpg'} 
+                        alt="Species portrait"
+                    />
                     <h2 className="planet-name-front">{speciesData.name}</h2>
                 </div>
             </div>
@@ -36,6 +40,12 @@ function SpeciesPanel (props) {
             </div>
         </div>
     )
+}
+
+function formatSpeciesName(original) {
+    let species = original.replace(/'s|'| |species/g, '');
+    console.log(species);
+    return species;
 }
 
 export default SpeciesPanel;
