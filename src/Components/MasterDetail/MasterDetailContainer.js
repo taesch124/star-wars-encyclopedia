@@ -7,6 +7,7 @@ import Message from './../Message/Message';
 
 //CSS
 import './MasterDetailContainer.scss';
+//temp
 
 class MasterDetailContainer extends Component {
     constructor(props) {
