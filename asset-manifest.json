@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/star-wars-encyclopedia/static/css/main.7af1497d.chunk.css",
+    "main.js": "/star-wars-encyclopedia/static/js/main.ad523cd9.chunk.js",
+    "main.js.map": "/star-wars-encyclopedia/static/js/main.ad523cd9.chunk.js.map",
+    "runtime~main.js": "/star-wars-encyclopedia/static/js/runtime~main.eb48660a.js",
+    "runtime~main.js.map": "/star-wars-encyclopedia/static/js/runtime~main.eb48660a.js.map",
+    "static/js/2.a8872f4d.chunk.js": "/star-wars-encyclopedia/static/js/2.a8872f4d.chunk.js",
+    "static/js/2.a8872f4d.chunk.js.map": "/star-wars-encyclopedia/static/js/2.a8872f4d.chunk.js.map",
+    "index.html": "/star-wars-encyclopedia/index.html",
+    "precache-manifest.096bd0f5628b6ac8a2174c71a3b29392.js": "/star-wars-encyclopedia/precache-manifest.096bd0f5628b6ac8a2174c71a3b29392.js",
+    "service-worker.js": "/star-wars-encyclopedia/service-worker.js",
+    "static/css/main.7af1497d.chunk.css.map": "/star-wars-encyclopedia/static/css/main.7af1497d.chunk.css.map",
+    "static/media/index.scss": "/star-wars-encyclopedia/static/media/Starjedi.af7c07fa.ttf"
+  }
+}
